@@ -14,6 +14,8 @@
     result([@"iOS " stringByAppendingString:[[UIDevice currentDevice] systemVersion]]);
   } else if ([@"setCookie" isEqualToString:call.method]) {
     result(true);
+  } else if ([@"getCookies" isEqualToString:call.method]) {
+    result(true);
   } else {
     result(FlutterMethodNotImplemented);
   }

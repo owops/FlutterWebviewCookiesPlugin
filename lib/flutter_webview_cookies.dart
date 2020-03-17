@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:flutter/services.dart';
 
@@ -11,5 +12,9 @@ class FlutterWebviewCookies {
     return version;
   }
 
+  static Future<List<Cookie>> getCookies () async {
+    final List<Cookie> cookies = await _channel.invokeMethod('getCookies');
+    return cookies;
+  }
 
 }
