@@ -12,9 +12,13 @@ class FlutterWebviewCookies {
     return version;
   }
 
-  static Future<List<Cookie>> getCookies () async {
+  static Future<List<Cookie>> getCookies() async {
     final List<Cookie> cookies = await _channel.invokeMethod('getCookies');
     return cookies;
   }
 
+  static Future<bool> setCookie(Map<String, dynamic> cookie) async {
+    final bool result = await _channel.invokeMethod('setCookie', cookie);
+    return result;
+  }
 }
